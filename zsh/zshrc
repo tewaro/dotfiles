@@ -102,4 +102,5 @@ source $ZSH/oh-my-zsh.sh
 alias vim="nvim"
 alias vi="nvim"
 
-[ -f "/home/tewaro/.ghcup/env" ] && . "/home/tewaro/.ghcup/env" # ghcup-env
+alias envim="nvim $HOME/.config/nvim/init.vim"
+alias cwk="awk -F,"

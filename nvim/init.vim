@@ -8,6 +8,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'jez/vim-superman'
 Plug 'neovim/nvim-lspconfig'
+Plug 'whonore/Coqtail'
 call plug#end()
 
 set nocompatible " disable compatibility to old-time vi
@@ -135,6 +136,7 @@ lspconfig.clangd.setup{}
 lspconfig.cmake.setup{}
 lspconfig.gopls.setup{}
 lspconfig.hls.setup{}
+lspconfig.ruff.setup{}
 lspconfig.rust_analyzer.setup{}
 lspconfig.idris2_lsp.setup{}
 EOF
