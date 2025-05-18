@@ -1,0 +1,7 @@
+vim.keymap.set("n", "-", "<cmd>Oil --float <CR>", {desc="Open Parent Directory in Oil"})
+vim.keymap.set("i", "jj", "<Esc>", {desc="jj Escape"})
+vim.keymap.set("i", "kk", "<Esc>", {desc="kk Escape"})
+vim.keymap.set("i", "hh", "<Esc>", {desc="hh Escape"})
+vim.keymap.set("i", "lll", "<Esc>", {desc="lll Escape"})
+vim.keymap.set("n", "gl", function() vim.diagnostic.open_float() end, {desc="Open diagnostics in float"})
+vim.keymap.set("n", "<leader>cf", function() require('conform').format({lsp_format = "fallback"}) end, {desc="[C]ode [F]ormat current file"})

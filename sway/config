@@ -92,7 +92,7 @@ exec swayidle -w \
     bindsym $mod+Ctrl+l exec swaylock -f -c 000000
 
     # Hibernate
-    bindsym $mod+Ctrl+h exec swaylock -f -c 000000 & systemctl suspend
+    bindsym $mod+Ctrl+h exec swaylock -f -c 000000 & systemctl hibernate
 
 #
 # Moving around:
@@ -206,6 +206,8 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy
 
 #
 # Status Bar:

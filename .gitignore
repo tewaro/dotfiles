@@ -1,4 +1,5 @@
-vim/plugged/*
 *.swp
 .DS_Store
-vim/.netrwhist
+lazy-lock.json
+*display.config
+oldinit.vim

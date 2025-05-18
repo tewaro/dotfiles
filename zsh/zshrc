@@ -101,6 +101,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
 alias vi="nvim"
-
+alias svi="vi \$(fzf)"
 alias envim="nvim $HOME/.config/nvim/init.vim"
 alias cwk="awk -F,"
+
+[ -f "${HOME}/.ghcup/env" ] && . "${HOME}/.ghcup/env" # ghcup-env

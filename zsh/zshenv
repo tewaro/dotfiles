@@ -8,3 +8,4 @@ if ! hostname | grep "\.cloudlab\.us$"; then
   . "$HOME/.ghcup/env"
 fi
 export BROWSER="/mnt/c/Program\ Files/Mozilla\ Firefox/firefox.exe"
+export S6="${HOME}/.local/share/s6"

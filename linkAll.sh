@@ -15,9 +15,13 @@ test -d $HOME/.oh-my-zsh || sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/o
 rm -f $HOME/.zshrc
 rm -f $HOME/.zshenv
 rm -f $HOME/.oh-my-zsh/themes/tewaro.zsh-theme
+rm -rf $HOME/.config/sway
+rm -rf $HOME/.config/foot
 ln -s $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc
 ln -s $HOME/.dotfiles/zsh/zshenv $HOME/.zshenv
 ln -s $HOME/.dotfiles/zsh/themes/tewaro.zsh-theme $HOME/.oh-my-zsh/themes/tewaro.zsh-theme
+ln -s $HOME/.dotfiles/sway $HOME/.config/sway
+ln -s $HOME/.dotfiles/foot $HOME/.config/foot
 
 echo Linking nvim
 rm -r $HOME/.config/nvim
