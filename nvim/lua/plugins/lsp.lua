@@ -199,7 +199,6 @@ return {
 			clangd = {},
 			gopls = {},
 			rust_analyzer = {},
-			coq_lsp = {},
 			lua_ls = {
 				-- cmd = { ... },
 				-- filetypes = { ... },

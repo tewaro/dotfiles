@@ -1,0 +1,12 @@
+[project]
+name = "nvim"
+version = "2025.05.18"
+description = "Neovim configuration"
+dependencies = [
+  "pynvim",
+  "jupyter_client",
+  "cairosvg",
+  "plotly",
+  "pnglatex",
+  "pyperclip",
+]

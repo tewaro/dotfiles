@@ -1,13 +1,14 @@
 #!/bin/sh
 
 echo Check pre-req
-command -v zsh    || exit 1
-command -v curl   || exit 1
-command -v git    || exit 1
-command -v tmux   || exit 1
-command -v nvim   || exit 1
+command -v zsh || exit 1
+command -v curl || exit 1
+command -v git || exit 1
+command -v tmux || exit 1
+command -v nvim || exit 1
+command -v uv || exit 1
 if ! hostname | grep "\.cloudlab\.us$"; then
-  command -v go   || exit 1
+  command -v go || exit 1
 fi
 
 echo Linking zsh
@@ -27,6 +28,16 @@ echo Linking nvim
 rm -r $HOME/.config/nvim
 mkdir -p $HOME/.config/
 ln -s $HOME/.dotfiles/nvim $HOME/.config/nvim
+
+echo Creating nvim virtualenv
+mkdir -p $HOME/.config/neoenv
+ln -s $HOME/.dotfiles/nvim/pyproject.toml $HOME/.config/neoenv
+pushd $HOME/.config/neoenv
+uv venv
+source .venv/bin/activate
+uv sync
+deactivate
+popd
 
 echo Linking git
 rm $HOME/.gitconfig
@@ -55,4 +66,3 @@ if ! hostname | grep "\.cloudlab\.us$"; then
   echo Setup Golang
   command -v gopls || go install golang.org/x/tools/gopls@latest
 fi
-
