@@ -14,7 +14,13 @@
   # helper = osxkeychain # OS X
 	# helper = store #Linux, now that PAT are a thing
 [alias]
+  pf = push --force-with-lease
+  ca = commit --amend
+  fh = commit --fixup HEAD
+  f = commit --fixup
+  s = status
   global = config --global --edit
+  local-edit = config --edit
   aliases = !git config -l | grep alias | cut -c7-
   unstage = reset HEAD --
   uncommit = reset --soft HEAD~1
