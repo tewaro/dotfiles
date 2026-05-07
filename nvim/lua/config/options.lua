@@ -1,6 +1,6 @@
 -- Number
 vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 
 -- Mouse/Cursor
 vim.opt.mouse = 'a'
@@ -29,3 +29,7 @@ vim.opt.splitbelow = true
 -- Display Certain WhiteSpace
 vim.opt.list = true
 vim.opt.listchars = {tab = "» " ,trail = "·"}
+
+-- End of Line Options
+vim.opt.tw = 100
+vim.opt.colorcolumn = "101"

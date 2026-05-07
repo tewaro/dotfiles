@@ -1,7 +1,13 @@
 return {
 	"ibhagwan/fzf-lua",
 	dependencies = { "echasnovski/mini.icons" },
-	opts = {},
+	opts = {
+		keymap = {
+			fzf = {
+				["ctrl-q"] = "select-all+accept",
+			},
+		},
+	},
 	keys = {
 		{
 			"<leader>f",
@@ -27,7 +33,7 @@ return {
 		{
 			"<leader>sf",
 			function()
-				require("fzf-lua").built_in()
+				require("fzf-lua").builtin()
 			end,
 			desc = "[S]earch [F]inders",
 		},

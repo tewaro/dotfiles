@@ -1,6 +1,6 @@
 [user]
-	name = tewaro
-	email = adityaatewari@gmail.com
+	name = Aditya Tewari
+	email = atewari@cloudflare.com
 [core]
   editor = nvim
   preloadindex = true
@@ -12,13 +12,12 @@
   default = simple
 [credential]
   # helper = osxkeychain # OS X
-	# helper = store #Linux, now that PAT are a thing
+  helper = store #Linux, now that PAT are a thing
 [alias]
   global = config --global --edit
   aliases = !git config -l | grep alias | cut -c7-
   unstage = reset HEAD --
   uncommit = reset --soft HEAD~1
-  amend = commit --amend
   tree = log --oneline --decorate --graph --all
   last = log -1 HEAD
   history = log -u
@@ -26,6 +25,11 @@
   wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
   unassume = !git ls-files -v | grep '^h' | cut -c3- | xargs git update-index --no-assume-unchanged
   submodule-pull = submodule foreach git pull origin master
+  pf = push --force-with-lease
+  ca = commit --amend
+  f = commit --fixup HEAD
+  s = status
+  d = difftool
   # ignore411 = !git update-index --assume-unchanged lab*/test*/* lab5/bench*/*
 [filter "lfs"]
 	clean = git-lfs clean -- %f
@@ -34,3 +38,13 @@
 	required = true
 [init]
 	defaultBranch = main
+[merge]
+	conflictstyle = diff3
+[diff]
+    tool = nvimdiff
+[difftool]
+    prompt = false
+[difftool "nvimdiff"]
+    cmd = nvim -d "$LOCAL" "$REMOTE"
+[http]
+	cookiefile = /home/tewaro/.gitcookies
