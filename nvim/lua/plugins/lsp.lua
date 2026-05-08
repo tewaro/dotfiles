@@ -214,6 +214,8 @@ return {
 				--},
 			},
 			buildifier = {},
+			hls = {},
+			coq_lsp = {},
 		}
 		-- Ensure the servers and tools above are installed
 		--
@@ -232,6 +234,7 @@ return {
 		vim.list_extend(ensure_installed, {
 			'stylua', -- Used to format Lua code
 			'shfmt', -- Shell formatter
+			'hlint', -- Haskell formatter
 		})
 		require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 		require('mason-lspconfig').setup {
