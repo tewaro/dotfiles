@@ -8,6 +8,7 @@ open_on_workspace() {
     swaymsg "exec $3"
     touch /tmp/startup/$2
     sleep ${SLEEP}
+  fi
 }
 
 open_on_workspace 7 signal signal-desktop
