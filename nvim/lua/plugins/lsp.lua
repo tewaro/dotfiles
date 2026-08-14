@@ -155,7 +155,7 @@ return {
 		vim.diagnostic.config {
 			severity_sort = true,
 			float = { border = 'rounded', source = 'if_many' },
-			underline = { severity = vim.diagnostic.severity.ERROR },
+			underline = { severity = vim.diagnostic.severity.HINT },
 			signs = {
 				text = {
 					[vim.diagnostic.severity.ERROR] = '󰅚 ',
@@ -251,6 +251,7 @@ return {
 			'stylua', -- Used to format Lua code
 			'shfmt', -- Shell formatter
 			'hlint', -- Haskell formatter
+			'tree-sitter-cli',
 		})
 
 		for server_name,server in pairs(servers) do

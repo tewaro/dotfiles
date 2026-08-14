@@ -3,7 +3,7 @@ return {
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
 		init = function()
-			local config = require'nvim-treesitter.configs';
+			local config = require("nvim-treesitter");
 			config.setup({
 				textobjects = {
 					select = {

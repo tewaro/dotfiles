@@ -3,6 +3,7 @@ name = "nvim"
 version = "2025.05.18"
 description = "Neovim configuration"
 dependencies = [
+  "ipykernel",
   "pynvim",
   "jupyter_client",
   "cairosvg",

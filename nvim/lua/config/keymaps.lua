@@ -34,3 +34,9 @@ vim.keymap.set(
 )
 vim.keymap.set("n", "<localleader>oh", ":MoltenHideOutput<CR>", { desc = "close output window", silent = true })
 vim.keymap.set("n", "<localleader>md", ":MoltenDelete<CR>", { desc = "delete Molten cell", silent = true })
+vim.keymap.set(
+	"n",
+	"<leader>n",
+	function() Snacks.notifier.show_history() end, 
+	{ desc = "Notification History" })
+
