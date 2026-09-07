@@ -4,7 +4,7 @@
 [core]
   editor = nvim
   preloadindex = true
-  excludesfile = /home/tewaro/.gitignore_global
+  excludesfile = /home/adityat/.gitignore_global
 [color]
   ui = auto
   interactive = auto
@@ -32,19 +32,19 @@
   d = difftool
   # ignore411 = !git update-index --assume-unchanged lab*/test*/* lab5/bench*/*
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [merge]
-	conflictstyle = diff3
+  conflictstyle = diff3
 [diff]
-    tool = nvimdiff
+  tool = nvimdiff
 [difftool]
-    prompt = false
+  prompt = false
 [difftool "nvimdiff"]
-    cmd = nvim -d "$LOCAL" "$REMOTE"
+  cmd = nvim -d "$LOCAL" "$REMOTE"
 [http]
-	cookiefile = /home/tewaro/.gitcookies
+  cookiefile = /home/tewaro/.gitcookies

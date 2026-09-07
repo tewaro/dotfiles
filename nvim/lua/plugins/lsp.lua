@@ -199,7 +199,6 @@ return {
 			jedi_language_server = {},
 			clangd = {},
 			gopls = {},
-			rust_analyzer = {},
 			lua_ls = {
 				-- cmd = { ... },
 				-- filetypes = { ... },
@@ -231,7 +230,8 @@ return {
 					},
 				},
 			},
-			harper_ls = {}
+			harper_ls = {},
+			coq_lsp = {},
 		}
 		-- Ensure the servers and tools above are installed
 		--
@@ -263,7 +263,23 @@ return {
 		require('mason-lspconfig').setup {
 			ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
 			automatic_installation = false,
+			automatic_enable = {
+				exclude = {
+					'rust_analyzer',
+					'stylua',
+				}
+			},
+			handlers = {
+				function(server_name)
+					if server_name == 'rust_analyzer' then return end
+					local server = servers[server_name] or {}
+					-- This handles overriding only values explicitly passed
+					-- by the server configuration above. Useful when disabling
+					-- certain features of an LSP (for example, turning off formatting for ts_ls)
+					server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+					require('lspconfig')[server_name].setup(server)
+				end,
+			},
 		}
-		--require("lsp.efm").setup()
 	end,
 }

@@ -106,8 +106,9 @@ alias envim="nvim $HOME/.config/nvim/init.vim"
 alias cwk="awk -F,"
 alias idle-off="systemctl --user stop swayidle.service"
 alias idle-on="systemctl --user start swayidle.service"
+alias jjd="jj describe"
 
 [ -f "${HOME}/.ghcup/env" ] && . "${HOME}/.ghcup/env" # ghcup-env
 
 # opencode
-export PATH=/home/tewaro/.opencode/bin:$PATH
+export PATH=/home/adityat/.opencode/bin:$PATH

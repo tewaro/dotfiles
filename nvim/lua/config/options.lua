@@ -33,3 +33,18 @@ vim.opt.listchars = {tab = "» " ,trail = "·"}
 -- End of Line Options
 vim.opt.tw = 100
 vim.opt.colorcolumn = "101"
+
+-- Project-local config
+vim.opt.exrc = true
+
+-- File reloading
+vim.o.autoread = true
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+  command = "checktime",
+})
+
+-- Notify when file is reloaded
+vim.api.nvim_create_autocmd({ "FileChangedShellPost" }, {
+  command = "lua vim.notify('File changed on disk. Buffer reloaded.', vim.log.levels.WARN)",
+})
+

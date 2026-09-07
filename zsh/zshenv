@@ -17,4 +17,7 @@ export S6="${HOME}/.local/share/s6"
 # This section can be safely removed at any time if needed.
 [[ ! -r '/home/tewaro/.opam/opam-init/init.zsh' ]] || source '/home/tewaro/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
-. $HOME/.elan/env
+. $HOME/.elan/env > /dev/null 2> /dev/null
+export HEIMDALL_KERNEL=/var/local/adityat/LDOS/Heimdall/integration/kernel-level
+export TERMINFO_DIRS="$HOME/.local/share/terminfo/:${TERMINFO_DIRS}"
+command -v tmux > /dev/null && if [[ -z "$TMUX" ]]; then tmux new -A -s main; fi
